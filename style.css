@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Vidaloka&display=swap');
-body{
-    background-color: #f3e2dd;  /* fallback for old browsers */
+
+body {
+    background-color: #f3e2dd;
+    /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #f3e2dd, #d3c4bf);
-    background: linear-gradient(to right, #f3e2dd, #d3c4bf); 
+    background: linear-gradient(to right, #f3e2dd, #d3c4bf);
 
 }
 
-p{
+p {
     color: #0E0510;
 }
 
-.active{
+.active {
     border-bottom: 3px #0E0510;
 }
 
-.lebron{
+.lebron {
     height: 50vh;
 }
 
@@ -45,26 +47,27 @@ p{
     padding: 0vh 5vh 0vh 5vh;
 }
 
-.card{
+.card {
     box-shadow: #0E0510;
     padding: 0vh 10vh 0vh 10vh;
     margin-bottom: 10vh;
 }
 
-.navbar{
-    background-color: #f3e2dd;  /* fallback for old browsers */
+.navbar {
+    background-color: #f3e2dd;
+    /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #f3e2dd, #d3c4bf);
-    background: linear-gradient(to right, #f3e2dd, #d3c4bf); 
+    background: linear-gradient(to right, #f3e2dd, #d3c4bf);
 }
 
-.container{
+.container {
     margin-top: 15px;
 }
 
-.vidaloka{
+.vidaloka {
     font-family: 'Vidaloka', serif;
 }
 
-.montserrat{
+.montserrat {
     font-family: 'Montserrat', sans-serif;
 }
