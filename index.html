@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="GOAT">
+    <meta name="apple-mobile-web-app-title" content="GOAT">
+    <meta name="theme-color" content="#FF9800">
+    <meta name="msapplication-navbutton-color" content="#FF9800">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Greatest of All Time</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="shortcut icon" href="./img/goat.png" type="image/x-icon">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -33,7 +63,18 @@
                     <div id="bio" class="profile-bio col-lg-7 col-md-6 col-sm-12">
                         <h1 class="vidaloka">LeBron "The King" James</h1>
                         <p class="montserrat">
-                            <strong>LeBron Raymone James Sr.</strong> (/ləˈbrɒn/; born December 30, 1984) is an American professional basketball player for the Los Angeles Lakers of the National Basketball Association (NBA). He is widely considered to be one of the greatest basketball players in NBA history, and discussions ranking him as the greatest basketball player of all time have often been subject to significant debate, with frequent comparisons to Michael Jordan.[1] James's teams have played in eight consecutive NBA Finals (2011–2018 seasons) between the Miami Heat and Cleveland Cavaliers. His accomplishments include three NBA championships, four NBA Most Valuable Player (MVP) Awards, three Finals MVP Awards, and two Olympic gold medals. James holds the all-time record for playoffs points, is third in all-time points, and eighth in all-time assists. James was selected to the All-NBA First Team twelve times (all-time record), made the All-Defensive First Team five times, and has played in sixteen All-Star Games, in which he was selected All-Star MVP three times.
+                            <strong>LeBron Raymone James Sr.</strong> (/ləˈbrɒn/; born December 30, 1984) is an American
+                            professional basketball player for the Los Angeles Lakers of the National Basketball
+                            Association (NBA). He is widely considered to be one of the greatest basketball players in
+                            NBA history, and discussions ranking him as the greatest basketball player of all time have
+                            often been subject to significant debate, with frequent comparisons to Michael Jordan.[1]
+                            James's teams have played in eight consecutive NBA Finals (2011–2018 seasons) between the
+                            Miami Heat and Cleveland Cavaliers. His accomplishments include three NBA championships,
+                            four NBA Most Valuable Player (MVP) Awards, three Finals MVP Awards, and two Olympic gold
+                            medals. James holds the all-time record for playoffs points, is third in all-time points,
+                            and eighth in all-time assists. James was selected to the All-NBA First Team twelve times
+                            (all-time record), made the All-Defensive First Team five times, and has played in sixteen
+                            All-Star Games, in which he was selected All-Star MVP three times.
                         </p>
                     </div>
                 </div>
@@ -41,9 +82,58 @@
         </div>
     </div>
 
-    <script src="./node_modules/jquery/dist/jquery.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="./node_modules/popper.js/dist/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(reg => {
+                        console.log('Service worker registered! 😎', reg);
+                    })
+                    .catch(err => {
+                        console.log('😥 Service worker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', event => {
+
+            // Prevent Chrome 67 and earlier from automatically showing the prompt
+            event.preventDefault();
+
+            // Stash the event so it can be triggered later.
+            deferredPrompt = event;
+
+            // Attach the install prompt to a user gesture
+            document.querySelector('#installBtn').addEventListener('click', event => {
+
+                // Show the prompt
+                deferredPrompt.prompt();
+
+                // Wait for the user to respond to the prompt
+                deferredPrompt.userChoice
+                    .then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('User accepted the A2HS prompt');
+                        } else {
+                            console.log('User dismissed the A2HS prompt');
+                        }
+                        deferredPrompt = null;
+                    });
+            });
+
+            // Update UI notify the user they can add to home screen
+            document.querySelector('#installBanner').style.display = 'flex';
+        });
+    </script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
