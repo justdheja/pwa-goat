@@ -48,12 +48,12 @@ p {
 
 .profile-bio p {
     text-align: justify;
-    padding: 0vh 5vh 0vh 5vh;
+    padding: 0vh 2vh 0vh 2vh;
 }
 
 .card {
     box-shadow: #0E0510;
-    padding: 0vh 10vh 0vh 10vh;
+    padding: 0vh 2vh 0vh 2vh;
     margin-bottom: 10vh;
 }
 
